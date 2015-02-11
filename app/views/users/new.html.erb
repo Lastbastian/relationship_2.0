@@ -16,7 +16,7 @@
       <%= f.text_field :email, class: 'form-control' %>
 
       <%= f.label :gender, "Your Gender" %>
-      <%= select_tag(:city_id, options_for_select([['Female', 1], ['Male', 2]])) %>
+      <%= select_tag(:gender, options_for_select([[' ', 1], ['Female', 2], ['Male', 3]])) %>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
