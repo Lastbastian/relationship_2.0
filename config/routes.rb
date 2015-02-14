@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   resources :questionnaires
 
+  resources :questions
+
 end
