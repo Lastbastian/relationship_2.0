@@ -6,6 +6,6 @@ bob:
 
 mark:
   first_name: Mark
-  last_name: example
+  last_name: Example
   email: mark@example.com
   password_digest: <%= User.digest('password') %>
