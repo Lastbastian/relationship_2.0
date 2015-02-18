@@ -3,9 +3,29 @@ bob:
   last_name: Example
   email: bob@example.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 mark:
   first_name: Mark
   last_name: Example
   email: mark@example.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+chris:
+  first_name: Chris
+  last_name: Example
+  email: chris@example.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+lily:
+  first_name: Lily
+  last_name: Example
+  email: Lily@example.com
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
