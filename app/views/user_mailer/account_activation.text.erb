@@ -1,5 +1,5 @@
 Hi <%= @user.first_name %>,
 
-Welcome to the Relationship 2.0!  Click on the link below to activate your account:
+Welcome to the Empathi.com!  Click on the link below to activate your account:
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
