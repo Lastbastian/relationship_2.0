@@ -11,7 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218203031) do
+ActiveRecord::Schema.define(version: 20150305000237) do
+
+  create_table "answers", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
+
+  create_table "options", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "options", ["question_id"], name: "index_options_on_question_id"
+
+  create_table "questionnaires", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "questionnaires", ["user_id", "created_at"], name: "index_questionnaires_on_user_id_and_created_at"
+  add_index "questionnaires", ["user_id"], name: "index_questionnaires_on_user_id"
+
+  create_table "questions", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "questionnaire_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "questions", ["questionnaire_id"], name: "index_questions_on_questionnaire_id"
+
+  create_table "surveys", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -22,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150218203031) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
+    t.string   "partner_id"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.string   "password_digest"

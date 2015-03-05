@@ -71,4 +71,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
 
+  test "associated questionnaires should be destroyed" do
+    @user.save
+    @user.questionnaires.create!(partner_name: "Stephanie", relationship_status: "Yes")
+    assert_difference 'Questionnaire.count', -1 do
+      @user.destroy
+    end
+  end
+
 end

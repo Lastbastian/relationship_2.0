@@ -1,0 +1,6 @@
+<%= form_for @questionnaire do |f| %>
+  <%= f.fields_for :questions do |builder| %>
+    <%= render 'question_fields', :f => builder %>
+  <% end %>
+  <%= f.submit "Submit" %>
+<% end %>

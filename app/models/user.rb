@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :questionnaires, dependent: :destroy
+  has_many :partners, class_name: "User",foreign_key: "partner_id"
+
   attr_accessor :remember_token, :activation_token, :reset_token
 
   before_save :downcase_email

@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :zip
+      t.string :partner_id
 
       t.timestamps null: false
     end
