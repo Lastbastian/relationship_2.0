@@ -1,17 +1,18 @@
-<% provide(:title, 'New Questionnaire') %>
-<h1>New Questionnaire</h1>
+<% provide(:title, 'New Survey') %>
+<h1>New</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@questionnaire) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
       <%= f.fields_for :questions do |builder| %>
-        <%= builder.label :content, "Question" %>
-        <%= builder.text_field :content, :rows => 3 %>
+        <p>
+          <%= f.label :content, "Question" %><br>
+          <%= f.text_area :content, :rows => 2 %>
+        </p>
       <% end %>
 
       <%= f.submit "Submit", class: "btn btn-primary" %>
+
     <% end %>
   </div>
 </div>

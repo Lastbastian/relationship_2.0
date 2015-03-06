@@ -196,7 +196,7 @@ user = User.create(first_name: "test", last_name: "user", email: 'test@test.com'
 @question8.options.create(content: "Blameworthy")
 @question8.options.create(content: "Damaged")
 
-@question9 = @q1.questions.create(content: "[Current User], in moments when you feel you are [A8a] and [A8b] and [A7a] and [A7b] how do you imagine you appear to [A1]? Pick two")
+@question9 = @q1.questions.create(content: "[Current User], in moments when you feel you are [A8a] and [A8b] and [A7a] and [A7b] how do you imagine you appear to [A1]? (Pick 2)")
 @question9.options.create(content: "Undesirable")
 @question9.options.create(content: "Unattractive")
 @question9.options.create(content: "Weak")
