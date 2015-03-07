@@ -4,8 +4,13 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <ol>
-      <%= @questionnaire.questions.each do |q| %>
-        <li><%= q.content %></li><br>
+      <% @questionnaire.questions.each do |question| %>
+        <li><%= question.content %></li><br>
+        <ul>
+          <% question.options.each do |option| %>
+            <li><%= option.content %></li><br>
+          <% end %>
+        </ul>
       <% end %>
     </ol>
       <%= link_to "Edit", edit_questionnaire_path(@questionnaire) %> |

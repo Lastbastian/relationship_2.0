@@ -34,6 +34,15 @@ class QuestionnairesController < ApplicationController
     end
   end
 
+  def destroy
+    @questionnaire = Questionnaire.find(params[:id])
+    if @questionnaire.destroy
+      render 'show'
+    else
+      render 'edit'
+    end
+  end
+
   private
 
     def questionnaire_params
